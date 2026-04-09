@@ -103,7 +103,8 @@ a {
 .scene-card,
 .impact-card,
 .company-card,
-.system-feature-card {
+.system-feature-card,
+.product-visual-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -234,7 +235,8 @@ a {
 
 .card-grid,
 .detail-grid,
-.impact-grid {
+.impact-grid,
+.product-visual-grid {
   display: grid;
   gap: 1.25rem;
 }
@@ -248,11 +250,17 @@ a {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.product-visual-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
 .product-card,
 .detail-card,
 .scene-card,
 .impact-card,
-.company-card {
+.company-card,
+.product-visual-card {
   padding: 1.5rem;
 }
 
@@ -273,6 +281,10 @@ a {
 
 .feature-list li + li {
   margin-top: 0.45rem;
+}
+
+.product-page-link {
+  margin-top: 1.25rem;
 }
 
 .system-band {
@@ -381,8 +393,9 @@ a {
   flex: 1;
 }
 
-.placeholder {
-  min-height: 260px;
+.placeholder,
+.product-placeholder-hero,
+.visual-placeholder {
   border: 1px dashed rgba(17, 20, 24, 0.18);
   border-radius: calc(var(--radius) - 8px);
   background:
@@ -392,6 +405,22 @@ a {
   place-items: center;
   text-align: center;
   padding: 1.5rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.placeholder {
+  min-height: 260px;
+}
+
+.product-placeholder-hero {
+  min-height: 420px;
+  height: 100%;
+}
+
+.visual-placeholder {
+  min-height: 260px;
+  margin: 1rem 0 1rem;
 }
 
 .placeholder-hero {
@@ -412,7 +441,8 @@ a {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-.placeholder span {
+.placeholder span,
+.product-placeholder-hero span {
   display: block;
   font-size: 1.05rem;
   font-weight: 800;
@@ -434,7 +464,8 @@ a {
 .impact-card h3,
 .product-card h3,
 .detail-card h3,
-.company-card h3 {
+.company-card h3,
+.product-visual-card h3 {
   margin-top: 0.2rem;
   margin-bottom: 0.6rem;
 }
@@ -461,7 +492,8 @@ a {
   .detail-grid,
   .impact-grid,
   .footer-grid,
-  .system-callouts {
+  .system-callouts,
+  .product-visual-grid {
     grid-template-columns: 1fr;
   }
 
@@ -495,7 +527,8 @@ a {
   .scene-card,
   .impact-card,
   .company-card,
-  .system-feature-card {
+  .system-feature-card,
+  .product-visual-card {
     padding: 1.2rem;
   }
 
@@ -511,5 +544,14 @@ a {
   .arch-arrow {
     width: 100%;
     text-align: center;
+  }
+
+  .product-placeholder-hero,
+  .hero-image {
+    min-height: 280px;
+  }
+
+  .visual-placeholder {
+    min-height: 200px;
   }
 }
