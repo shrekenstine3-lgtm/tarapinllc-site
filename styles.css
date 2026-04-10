@@ -287,6 +287,22 @@ a {
   margin-top: 1.25rem;
 }
 
+.product-card-image {
+  width: 100%;
+  border-radius: calc(var(--radius) - 10px);
+  margin: 0.75rem 0 1rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.product-card-featured {
+  grid-column: span 2;
+}
+
+.product-platform-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .system-band {
   padding-top: 0.5rem;
 }
@@ -470,6 +486,36 @@ a {
   margin-bottom: 0.6rem;
 }
 
+/* Abstract card with background image */
+.abstract-grid-custom .impact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.abstract-shf-card {
+  background-image: url("specs.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 280px;
+}
+
+.abstract-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.abstract-card-content {
+  position: relative;
+  z-index: 2;
+}
+
 .site-footer {
   padding: 2.5rem 0 4rem;
   border-top: 1px solid var(--line);
@@ -493,7 +539,8 @@ a {
   .impact-grid,
   .footer-grid,
   .system-callouts,
-  .product-visual-grid {
+  .product-visual-grid,
+  .product-platform-grid {
     grid-template-columns: 1fr;
   }
 
@@ -505,6 +552,10 @@ a {
 
   .hero {
     padding-top: 3rem;
+  }
+
+  .product-card-featured {
+    grid-column: span 1;
   }
 }
 
@@ -553,5 +604,9 @@ a {
 
   .visual-placeholder {
     min-height: 200px;
+  }
+
+  .abstract-shf-card {
+    min-height: 220px;
   }
 }
