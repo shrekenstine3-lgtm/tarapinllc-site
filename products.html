@@ -1,612 +1,273 @@
-:root {
-  --bg: #f6f7f9;
-  --surface: #ffffff;
-  --surface-alt: #10151c;
-  --text: #111418;
-  --muted: #5a6472;
-  --line: rgba(17, 20, 24, 0.08);
-  --red: #c9252d;
-  --red-dark: #8e171d;
-  --yellow: #efb82f;
-  --offwhite: #f5f2ec;
-  --shadow: 0 20px 50px rgba(8, 12, 20, 0.08);
-  --radius: 24px;
-  --radius-sm: 16px;
-  --container: 1180px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--text);
-  background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
-  line-height: 1.6;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(var(--container), calc(100% - 2rem));
-  margin: 0 auto;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.86);
-  border-bottom: 1px solid var(--line);
-}
-
-.header-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.brand {
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.site-nav a {
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.site-nav a:hover {
-  color: var(--text);
-}
-
-.hero {
-  padding: 5rem 0 3rem;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 2rem;
-  align-items: stretch;
-}
-
-.hero-copy,
-.panel,
-.product-card,
-.detail-card,
-.scene-card,
-.impact-card,
-.company-card,
-.system-feature-card,
-.product-visual-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.hero-copy {
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.panel {
-  padding: 1.25rem;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  object-fit: cover;
-  border-radius: calc(var(--radius) - 8px);
-  display: block;
-}
-
-.section-image {
-  width: 100%;
-  min-height: 220px;
-  object-fit: cover;
-  border-radius: calc(var(--radius) - 8px);
-  display: block;
-  margin-top: 1.25rem;
-}
-
-.eyebrow,
-.section-label,
-.product-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.eyebrow,
-.section-label {
-  color: var(--red);
-}
-
-.hero h1,
-.section h2,
-.site-footer h2 {
-  margin: 0.4rem 0 0.8rem;
-  line-height: 1.02;
-}
-
-.hero h1 {
-  font-size: clamp(2.8rem, 7vw, 5rem);
-}
-
-.lead {
-  margin: 0 0 1.5rem;
-  color: var(--muted);
-  max-width: 44rem;
-  font-size: 1.1rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 1.2rem;
-  border-radius: 999px;
-  font-weight: 700;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-}
-
-.button-primary {
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
-}
-
-.button-secondary {
-  border: 1px solid var(--line);
-  background: #ffffff;
-}
-
-.section {
-  padding: 1.2rem 0 3rem;
-}
-
-.section-intro,
-.section-head,
-.company-grid {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-.section-head {
-  margin-bottom: 1.5rem;
-}
-
-.section-copy {
-  max-width: 56rem;
-}
-
-.section-subhead {
-  max-width: 30rem;
-  color: var(--muted);
-  margin: 0.25rem 0 0;
-}
-
-.card-grid,
-.detail-grid,
-.impact-grid,
-.product-visual-grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.card-grid,
-.detail-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.impact-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.product-visual-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 1.5rem;
-}
-
-.product-card,
-.detail-card,
-.scene-card,
-.impact-card,
-.company-card,
-.product-visual-card {
-  padding: 1.5rem;
-}
-
-.product-badge {
-  color: var(--red);
-  margin-bottom: 0.75rem;
-}
-
-.product-badge-muted {
-  color: #6a7180;
-}
-
-.feature-list {
-  margin: 1rem 0 0;
-  padding-left: 1.15rem;
-  color: var(--muted);
-}
-
-.feature-list li + li {
-  margin-top: 0.45rem;
-}
-
-.product-page-link {
-  margin-top: 1.25rem;
-}
-
-.product-card-image {
-  width: 100%;
-  border-radius: calc(var(--radius) - 10px);
-  margin: 0.75rem 0 1rem;
-  border: 1px solid var(--line);
-  background: #fff;
-}
-
-.product-card-featured {
-  grid-column: span 2;
-}
-
-.product-platform-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.system-band {
-  padding-top: 0.5rem;
-}
-
-.architecture {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, #12161d 0%, #0c1016 100%);
-  box-shadow: var(--shadow);
-}
-
-.arch-node,
-.arch-arrow {
-  color: #f2f4f7;
-}
-
-.arch-node {
-  padding: 0.85rem 1rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  font-weight: 700;
-}
-
-.arch-arrow {
-  font-size: 1.25rem;
-  opacity: 0.72;
-}
-
-.system-feature-card {
-  padding: 1.75rem;
-}
-
-.system-feature-lead {
-  max-width: 60rem;
-  color: var(--muted);
-  margin: 0 0 1.25rem;
-  font-size: 1.05rem;
-}
-
-.system-feature-image {
-  width: 100%;
-  border-radius: calc(var(--radius) - 8px);
-  display: block;
-  margin: 1rem 0 1.5rem;
-}
-
-.system-callouts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.callout-item {
-  background: #f8f9fb;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 1rem;
-}
-
-.callout-item h3 {
-  margin: 0 0 0.45rem;
-  font-size: 1rem;
-}
-
-.callout-item p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.operation {
-  background: linear-gradient(180deg, #131922 0%, #0d1218 100%);
-  color: #f0f3f7;
-  padding: 3rem 0;
-  margin-top: 1rem;
-}
-
-.operation .section-subhead,
-.operation p,
-.operation .feature-list,
-.operation .site-nav a {
-  color: rgba(240, 243, 247, 0.76);
-}
-
-.operation .scene-card {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: none;
-}
-
-.company-ip {
-  padding-top: 3rem;
-}
-
-.company-grid {
-  align-items: stretch;
-}
-
-.company-grid > * {
-  flex: 1;
-}
-
-.placeholder,
-.product-placeholder-hero,
-.visual-placeholder {
-  border: 1px dashed rgba(17, 20, 24, 0.18);
-  border-radius: calc(var(--radius) - 8px);
-  background:
-    linear-gradient(135deg, rgba(201, 37, 45, 0.08), rgba(239, 184, 47, 0.06)),
-    linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.placeholder {
-  min-height: 260px;
-}
-
-.product-placeholder-hero {
-  min-height: 420px;
-  height: 100%;
-}
-
-.visual-placeholder {
-  min-height: 260px;
-  margin: 1rem 0 1rem;
-}
-
-.placeholder-hero {
-  min-height: 420px;
-}
-
-.placeholder-card {
-  min-height: 220px;
-  margin-top: 1.25rem;
-}
-
-.placeholder-scene {
-  min-height: 240px;
-  margin-bottom: 1rem;
-  background:
-    linear-gradient(135deg, rgba(201, 37, 45, 0.16), rgba(239, 184, 47, 0.08)),
-    linear-gradient(180deg, #151d25 0%, #0e1318 100%);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.placeholder span,
-.product-placeholder-hero span {
-  display: block;
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-.placeholder small {
-  display: block;
-  margin-top: 0.4rem;
-  color: var(--muted);
-}
-
-.operation .placeholder span,
-.operation .placeholder small {
-  color: #f0f3f7;
-}
-
-.scene-card h3,
-.impact-card h3,
-.product-card h3,
-.detail-card h3,
-.company-card h3,
-.product-visual-card h3 {
-  margin-top: 0.2rem;
-  margin-bottom: 0.6rem;
-}
-
-/* Abstract card with background image */
-.abstract-grid-custom .impact-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.abstract-shf-card {
-  background-image: url("specs.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 280px;
-}
-
-.abstract-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.88) 100%
-  );
-  z-index: 1;
-}
-
-.abstract-card-content {
-  position: relative;
-  z-index: 2;
-}
-
-.site-footer {
-  padding: 2.5rem 0 4rem;
-  border-top: 1px solid var(--line);
-}
-
-.footer-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.site-footer p {
-  color: var(--muted);
-  margin: 0.25rem 0 0;
-}
-
-@media (max-width: 980px) {
-  .hero-grid,
-  .card-grid,
-  .detail-grid,
-  .impact-grid,
-  .footer-grid,
-  .system-callouts,
-  .product-visual-grid,
-  .product-platform-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-intro,
-  .section-head,
-  .company-grid {
-    flex-direction: column;
-  }
-
-  .hero {
-    padding-top: 3rem;
-  }
-
-  .product-card-featured {
-    grid-column: span 1;
-  }
-}
-
-@media (max-width: 720px) {
-  .header-inner {
-    min-height: auto;
-    padding: 1rem 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .site-nav {
-    gap: 0.75rem;
-  }
-
-  .hero-copy,
-  .panel,
-  .product-card,
-  .detail-card,
-  .scene-card,
-  .impact-card,
-  .company-card,
-  .system-feature-card,
-  .product-visual-card {
-    padding: 1.2rem;
-  }
-
-  .architecture {
-    gap: 0.5rem;
-  }
-
-  .arch-node {
-    width: 100%;
-    border-radius: 16px;
-  }
-
-  .arch-arrow {
-    width: 100%;
-    text-align: center;
-  }
-
-  .product-placeholder-hero,
-  .hero-image {
-    min-height: 280px;
-  }
-
-  .visual-placeholder {
-    min-height: 200px;
-  }
-
-  .abstract-shf-card {
-    min-height: 220px;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Tarapin LLC</title>
+  <meta
+    name="description"
+    content="Explore the Tarapin LLC product platform including Systems Hydro Flight, OptoPac, and RoboSuit."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Tarapin LLC</a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="products.html">Products</a>
+        <a href="index.html#system">TARAPIN System</a>
+        <a href="index.html#operation">Operation</a>
+        <a href="index.html#design">Design</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Tarapin LLC product platform</p>
+          <h1>PRODUCTS</h1>
+          <p class="lead">
+            Tarapin LLC is being developed as a remote-response product platform built around
+            hazardous-environment capability, robotic support concepts, and future protective systems.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products-grid">View Product Platform</a>
+            <a class="button button-secondary" href="#abstract">Read Abstracts</a>
+          </div>
+        </div>
+
+        <div class="hero-visual panel">
+          <img
+            src="scene%20parkinglot.png"
+            alt="Tarapin remote-response systems product platform hero scene"
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="container section-intro">
+        <div class="section-label">Section 01</div>
+        <div class="section-copy">
+          <h2>What This Page Is</h2>
+          <p>
+            This page organizes the current Tarapin LLC product platform into distinct entries that
+            can grow into standalone product pages. Each product can later hold renders, system diagrams,
+            visual callouts, and expanded product language.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products-grid">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Section 02</div>
+            <h2>Product Platform</h2>
+          </div>
+          <p class="section-subhead">
+            Three product directions under one company identity, structured for future expansion.
+          </p>
+        </div>
+
+        <div class="card-grid product-platform-grid">
+          <article class="product-card product-card-featured">
+            <div class="product-badge">Flagship Product</div>
+            <h3>Systems Hydro Flight</h3>
+
+            <img
+              src="3peice%20shot.png"
+              alt="Systems Hydro Flight product render"
+              class="product-card-image"
+            />
+
+            <p>
+              A remote-response hydro-flight firefighting platform designed to project suppression
+              capability into dangerous environments while helping keep operators farther from first-entry risk.
+            </p>
+            <ul class="feature-list">
+              <li>Forward suppression flight unit</li>
+              <li>Tracked support and supply base</li>
+              <li>Managed hose and tether architecture</li>
+              <li>Remote operator control system</li>
+            </ul>
+            <div class="product-page-link">
+              <a class="button button-primary" href="systems-hydro-flight.html">Open Product Page</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-badge product-badge-muted">Product Family</div>
+            <h3>OptoPac</h3>
+            <p>
+              A robotic emergency-response backpack concept intended to expand lighting,
+              equipment integration, suppression support, and modular field utility.
+            </p>
+            <ul class="feature-list">
+              <li>Robotic backpack support platform</li>
+              <li>Utility and lighting architecture</li>
+              <li>Suppression support potential</li>
+              <li>Future systems integration space</li>
+            </ul>
+            <div class="product-page-link">
+              <a class="button button-primary" href="optopac.html">Open Product Page</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-badge product-badge-muted">Product Family</div>
+            <h3>RoboSuit</h3>
+            <p>
+              A protective robotic suit concept developed to extend survivability,
+              mission flexibility, and emergency-response capability in hazardous settings.
+            </p>
+            <ul class="feature-list">
+              <li>Protective robotic suit architecture</li>
+              <li>Layered mission-role capability</li>
+              <li>Hazard-response support concept</li>
+              <li>Expandable future platform identity</li>
+            </ul>
+            <div class="product-page-link">
+              <a class="button button-primary" href="robosuit.html">Open Product Page</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section impact" id="abstract">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Section 03</div>
+            <h2>ABSTRACT</h2>
+          </div>
+          <p class="section-subhead">
+            High-level abstracts for the current Tarapin LLC product platform.
+          </p>
+        </div>
+
+        <div class="impact-grid abstract-grid-custom">
+          <article class="impact-card abstract-shf-card">
+            <div class="abstract-overlay"></div>
+            <div class="abstract-card-content">
+              <h3>Systems Hydro Flight</h3>
+              <p>
+                Systems Hydro Flight is a remote-response firefighting concept that combines a
+                forward hydro-flight suppression unit, tracked support base, tethered water delivery,
+                and remote operator control to extend controlled firefighting reach into hazardous
+                zones while increasing operator standoff from danger.
+              </p>
+            </div>
+          </article>
+
+          <article class="impact-card">
+            <h3>OptoPac</h3>
+            <p>
+              OptoPac is a robotic emergency-response backpack concept intended to function as a
+              modular support platform for lighting, integrated equipment, suppression support,
+              and field utility within hazardous and complex response environments.
+            </p>
+          </article>
+
+          <article class="impact-card">
+            <h3>RoboSuit</h3>
+            <p>
+              RoboSuit is a protective robotic suit concept developed to support emergency-response,
+              hazardous-environment operation, and future specialized missions through layered
+              protective design, systems integration, and expandable equipment architecture.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section detail-section">
+      <div class="container">
+        <article class="system-feature-card">
+          <div class="section-label">Section 04</div>
+          <h2>Visual Buildout Space</h2>
+          <p class="system-feature-lead">
+            These blocks are reserved for future render placement, diagrams, and product storytelling.
+          </p>
+
+          <div class="product-visual-grid">
+            <div class="product-visual-card">
+              <h3>Systems Hydro Flight</h3>
+              <div class="visual-placeholder">Image Placeholder</div>
+              <p>
+                Add the primary product render, action scene, or system callout graphic here.
+              </p>
+            </div>
+
+            <div class="product-visual-card">
+              <h3>OptoPac</h3>
+              <div class="visual-placeholder">Image Placeholder</div>
+              <p>
+                Add the backpack render, mounted robotic view, or component breakdown here.
+              </p>
+            </div>
+
+            <div class="product-visual-card">
+              <h3>RoboSuit</h3>
+              <div class="visual-placeholder">Image Placeholder</div>
+              <p>
+                Add the full suit render, layered protective view, or mission scene here.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section company-ip">
+      <div class="container company-grid">
+        <div>
+          <div class="section-label">Section 05</div>
+          <h2>Why Structure It This Way</h2>
+          <p>
+            Building separate product pages now gives Tarapin LLC a cleaner path for future visual development,
+            partner presentation, concept differentiation, and product-family expansion without rebuilding the site later.
+          </p>
+        </div>
+
+        <div class="company-card">
+          <h3>Build Path</h3>
+          <ul class="feature-list">
+            <li>Separate product identities</li>
+            <li>Dedicated abstract sections</li>
+            <li>Future image placement built in now</li>
+            <li>Cleaner partner presentation flow</li>
+            <li>Expandable platform structure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <h2>Tarapin LLC</h2>
+          <p>Advanced remote-response systems for hazardous environments.</p>
+        </div>
+
+        <div>
+          <h3>Next Step</h3>
+          <p>Build out each individual product page with images, diagrams, and deeper product language.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
